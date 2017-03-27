@@ -1,0 +1,266 @@
+<section class="container">
+	<div class="row">
+		<div class="col-sm-2">
+			<span class="user-name">
+                <?php echo $user->getPrenom(); ?>
+                <?php echo $user->getNom(); ?>
+            </span>
+			<br>
+			<br>
+
+
+
+			<img class="profileIMG" src="<?php echo $user->getPhoto(); ?>">
+			<br>
+			<br> Depuis le
+			<?php echo date("d/m/Y", $user->getInscription()); ?>
+				<br>
+				<br>
+
+				<ul class="list-group">
+					<li class="list-group-item">
+						<?php echo $user->getVisites();?> Visites</li>
+					<li class="list-group-item">4 favoris</li>
+					<li class="list-group-item">20 matches</li>
+				</ul>
+		</div>
+		<div class="col-sm-10">
+			<nav class="navbar">
+				<div class="container-fluid">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="/utilisateur/profile/edit">Mon profil <span class="sr-only">(current)</span></a></li>
+						<li><a href="#">Mes matches</a></li>
+						<li><a href="#">Mes favoris</a></li>
+						<li><a href="/utilisateur/profile/index">Mes Infos</a></li>
+					</ul>
+				</div>
+			</nav>
+
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">Informations personnelles</h3>
+				</div>
+				<div class="panel-body">
+					<?php echo $this->form()->openTag($form); ?>
+						<div class="row">
+							<div class="col-sm-2">
+								<?php echo $this->formLabel($form->get('nom')); ?>
+							</div>
+							<div class="col-sm-10">
+								<?php echo $this->formElement($form->get('nom')); ?>
+							</div>
+						</div>
+
+						<div class="row" style="margin-top: 0.5em;">
+							<div class="col-sm-2">
+								<?php echo $this->formLabel($form->get('prenom')); ?>
+							</div>
+							<div class="col-sm-10">
+								<?php echo $this->formElement($form->get('prenom')); ?>
+							</div>
+						</div>
+
+						<div class="row" style="margin-top: 0.5em;">
+							<div class="col-sm-2">
+								<?php echo $this->formLabel($form->get('date_naissance')); ?>
+							</div>
+							<div class="col-sm-10">
+								<?php echo $this->formElement($form->get('date_naissance')); ?>
+								<?php echo $this->formElement($form->get('date_naissance2')); ?>
+								<?php echo $this->formElement($form->get('date_naissance3')); ?>
+
+
+							</div>
+						</div>
+
+						<div class="row" style="margin-top: 0.5em;">
+							<div class="col-sm-2">
+								<?php echo $this->formLabel($form->get('telephone')); ?>
+							</div>
+							<div class="col-sm-10">
+								<?php echo $this->formElement($form->get('telephone')); ?>
+							</div>
+						</div>
+
+						<div class="row" style="margin-top: 0.5em;">
+							<div class="col-sm-2">
+								<?php echo $this->formLabel($form->get('adresse')); ?>
+							</div>
+							<div class="col-sm-10">
+								<?php echo $this->formElement($form->get('adresse')); ?>
+							</div>
+						</div>
+
+						<div class="row" style="margin-top: 0.5em;">
+							<div class="col-sm-2">
+								<?php echo $this->formLabel($form->get('code_postal')); ?>
+							</div>
+							<div class="col-sm-10">
+								<?php echo $this->formElement($form->get('code_postal')); ?>
+							</div>
+						</div>
+
+
+						<div class="right">
+							<br>
+							<?php echo $this->formElement($form->get('submit')); ?>
+						</div>
+					<?php echo $this->form()->closeTag($form); ?>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Description</h3>
+				</div>
+				<div class="panel-body">
+					<?php echo $this->form()->openTag($formDescription); ?>
+						<?php echo $this->formElement($formDescription->get('description')); ?>
+
+						<div class="right">
+							<br>
+							<?php echo $this->formElement($formDescription->get('submit')); ?>
+						</div>
+					<?php echo $this->form()->closeTag($formDescription); ?>
+				</div>
+			</div>
+			
+			<?php if ($user->getType() == 0)  { ?>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Profil recherché</h3>
+				</div>
+				<div class="panel-body">
+					<form>
+<?php echo $this->formLabel($form->get('type_de_contrat')); ?>
+<?php echo $this->formElement($form->get('type_de_contrat')); ?>		
+						
+
+						<select>
+							<?php echo $this->formLabel($form->get('poste')); ?>
+							<option>Poste</option>
+						</select>
+
+						<select>
+							<option>Lieux</option>
+						</select>
+						&nbsp;&nbsp;
+						<label>Salaire minimum</label>&nbsp;&nbsp;
+						<input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="800" data-slider-max="6000" data-slider-step="100" data-slider-value="2200">
+						<script type="text/javascript">
+							$('#ex1').slider({
+								formatter: function (value) {
+									return 'Current value: ' + value;
+								}
+							});
+						</script>
+
+						<br>
+						<br>
+						<div class="skills">
+
+
+					 </div>
+													<?php
+		$skillCount = 0;
+		foreach ($formSkill as $element) {
+			if ($skillCount >= 6) {
+				echo '<br>';
+				$skillCount = 0;
+			}
+			if ($element->getAttribute('type') != 'checkbox') continue;
+			echo $this->formElement($element) . ' ' . $this->formLabel($element);
+			$skillCount++;
+		} ?>
+						<div class="right">
+							<br>
+
+							<button type="submit" class="btn btn-primary">Valider</button>
+						</div>
+					</form>
+				</div>
+			</div> -->
+<?php } elseif($user->getType() == 1) { ?>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Créer votre annonce</h3>
+				</div>
+				<div class="panel-body">
+					<form>
+<!--						<input class="form-control" type="text" placeholder="Intitulé du poste">-->
+						<br>
+
+
+<!--
+						<select>
+							<option>Type de contrat</option>
+						</select>
+
+						<select>
+							<option>Poste</option>
+						</select>
+
+						<select>
+							<option>Lieux</option>
+						</select>
+-->
+						
+						&nbsp;&nbsp;
+						<label>Salaire minimum</label>&nbsp;&nbsp;
+						<input id="ex2" data-slider-id='ex1Slider' type="text" data-slider-min="800" data-slider-max="6000" data-slider-step="100" data-slider-value="2200">
+						<script type="text/javascript">
+							$('#ex2').slider({
+								formatter: function (value) {
+									return 'Current value: ' + value;
+								}
+							});
+						</script>
+
+						<br>
+						<br>
+						
+
+							<br>
+							<br>
+<!--
+							 <input type="checkbox">
+							<label>Html</label>
+							<input type="checkbox">
+							<label>Php</label>
+							<input type="checkbox">
+							<label>Java</label>
+							<input type="checkbox">
+							<label>Php</label>
+-->
+							<br> 
+						<div class="skills well">
+							
+		<?php
+		$skillCount = 0;
+		foreach ($formSkill as $element) {
+			if ($skillCount >= 6) {
+				echo '<br>';
+				$skillCount = 0;
+			}
+			if ($element->getAttribute('type') != 'checkbox') continue;
+			echo $this->formElement($element) . ' ' . $this->formLabel($element);
+			$skillCount++;
+		} ?>
+						
+						</div>
+
+						<strong>Détails du poste</strong>
+						<textarea class="form-control"></textarea>
+
+						<div class="right">
+							<br>
+							<?php echo $this->formElement($formDescription->get('submit')); ?>
+						</div>
+					</form>
+				</div>
+			</div>
+			<?php } ?>
+		</div>
+	</div>
+
+</section>

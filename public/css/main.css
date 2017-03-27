@@ -1,0 +1,106 @@
+h2 {
+	text-align: center;
+}
+
+.center {
+	text-align: center;
+}
+
+.right {
+	text-align: right;
+}
+
+.logos {
+	width: 100%;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+}
+
+.col-sm-6 {
+	height: 8em;
+}
+
+.big-col {
+	height: 16em;
+}
+
+.navbarmain {
+	border-radius: 0;
+}
+
+footer {
+	margin-top: 2em;
+	text-align: center;
+	min-height: 200px;
+	line-height: 4em;
+	background-color: #222;
+	color: #778899;
+}
+
+
+footer .navbar {
+	color: #778899;
+}
+
+
+header .navbar {
+	color: #778899;
+}
+
+.bandeau {
+	background-color: #eee;
+	margin: 1em 0;
+	padding: 1em 0;
+	width: 100%;
+}
+
+.user-name {
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+.skills label {
+	width: 6em;
+}
+
+.emodamur img {
+	width: 4em;
+
+}
+
+.annonce {
+	border: 1px solid #CCC;
+	padding: 1em;
+}
+
+.annonce img {
+	float: left;
+	margin-right:1.2em;
+}
+
+.event-img {
+	width: 100%;
+	height: calc(100% - 1em);
+}
+
+.socials i {
+	margin: 0 0.25em;
+}
+
+.profileIMG {
+	max-width: 128px;
+	max-height: 160px;
+}
+
+.logo {
+	max-height: 24px;
+
+}
+
+.camarche {
+min-height: 128px;
+min-width: 256px;
+}

@@ -1,0 +1,105 @@
+<section class="container">
+    <div class="row">
+        <div class="col-sm-2">
+            <span class="user-name">
+                <?php echo $user->getPrenom(); ?>
+                <?php echo $user->getNom(); ?>
+            </span><br><br>
+            <img class= "profileIMG" src= "<?php echo $user->getPhoto(); ?>" ><br><br>
+            Depuis le  <?php echo date("d/m/Y", $user->getInscription()); ?> <br><br>
+
+            <ul class="list-group">
+                <li class="list-group-item"><?php echo $user->getVisites();?>  Visites</li>
+                <li class="list-group-item">4 favoris</li>
+                <li class="list-group-item">20 matches</li>
+            </ul>
+        </div>
+        <div class="col-sm-10">
+           <nav class="navbar">
+            <div class="container-fluid">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="/utilisateur/profile/edit">Mon profil <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">Mes matches</a></li>
+                <li><a href="#">Mes favoris</a></li>
+                <li><a href="/utilisateur/profile/index">Mes Infos</a></li>
+              </ul>
+            </div>
+          </nav>
+
+
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><strong>Ces recruteurs souhaitent vous rencontrer </strong></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="emodamur center">
+                        <img src="/img/emo.png">
+                        <img src="/img/emo.png">
+                        <img src="/img/emo.png">
+                        <img src="/img/emo.png">
+                        <img src="/img/emo.png">
+                        <img src="/img/emo.png">
+                        <img src="/img/emo.png">
+                        <img src="/img/emo.png">
+                        <img src="/img/emo.png">
+                        <img src="/img/emo.png">
+                    </div>
+               </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><strong>Ces offres pourraient vous intéresser </strong></h3>
+                </div>
+                <div class="panel-body">
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="annonce">
+                                <img src="http://placehold.it/80x80">
+                                <strong> Titre de l'offre - F/H </strong><br>
+                                <em>premium</em> <br>
+                                Chez "Beweb" <br>
+                                HTML/CSS/PHP/AstralProj/JavaScript
+
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="annonce">
+                                <img src="http://placehold.it/80x80">
+                               <strong> Titre de l'offre - F/H </strong><br>
+                                <em>premium</em> <br>
+                                Chez "Bethesda" <br>
+                                HTML/CSS/PHP/AstralProj/JavaScript
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="annonce">
+                                <img src="http://placehold.it/80x80">
+                                <strong> Titre de l'offre - F/H </strong><br>
+                                <em>premium</em> <br>
+                                Chez "Beweb" <br>
+                                HTML/CSS/PHP/AstralProj/JavaScript
+
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="annonce">
+                                <img src="http://placehold.it/80x80">
+                               <strong> Titre de l'offre - F/H </strong><br>
+                                <em>premium</em> <br>
+                                Chez "Bethesda" <br>
+                                HTML/CSS/PHP/AstralProj/JavaScript
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+		</div>
+	</div>
+</section>

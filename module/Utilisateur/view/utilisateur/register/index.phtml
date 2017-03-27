@@ -1,0 +1,138 @@
+<section class="container">
+    
+    
+    <?php if (!empty($message)) { ?>
+    
+    <div class="alert alert-warning alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <?php echo $message; ?>
+    </div>
+    
+    <?php } ?>
+    <div class="row">
+        <div class="col-sm-4">
+        </div>
+        
+        <div class="col-sm-8">
+            <h1 class="center">Inscription</h1>
+            <br>
+            <form method="post" action="/utilisateur/register">
+                <fieldset>
+                    <!-- email -->
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label for="email">Adresse e-mail *</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input class="form-control" placeholder="vous@domaine.com" type="email" name="email">
+                        </div>
+                    </div>
+                    <br>
+                    <!-- password -->
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label for="password">Mot de passe *</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input class="form-control" type="password" name="password">
+                        </div>
+                    </div>
+                    <br>
+                    <!-- type -->
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label for="type">Je suis *</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <select class="form-control" name="type">
+                                <option selected="selected">Type de compte</option>
+                                <option value="0">Candidat</option>
+                                <option value="1">Recruteur</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <!-- bouton -->
+                    <div class="center">
+                        <button id="continue" class="btn btn-primary" type="button" onclick="showForm();">Continuer</button>
+                    </div>
+                    
+                </fieldset>
+                <hr><br>
+                <fieldset id="formData" style="display:none;">
+                    <!-- Nom -->
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label for="nom">Nom *</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input class="form-control" type="text" name="nom" placeholder="Tanic">
+                        </div>
+                    </div>
+                    <br>
+                    
+                    <!-- Prenom -->
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label for="prenom">Prenom *</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input class="form-control" type="text" name="prenom" placeholder="T'Yan">
+                        </div>
+                    </div>
+                    <br>
+                    
+                    <!-- Téléphone -->
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label for="telephone">Téléphone *</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input class="form-control" type="text" name="telephone" placeholder="06XXXXXXXX">
+                        </div>
+                    </div>
+                    <br>
+                    
+                    <!-- Code Postal -->
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label for="cp">Code postal</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input class="form-control" type="text" name="cp" placeholder="34500">
+                        </div>
+                    </div>
+                    <br>
+                    
+                    <!-- Code Postal -->
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label for="adresse">Adresse</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input class="form-control" type="text" name="adresse" placeholder="127.0.0.1">
+                        </div>
+                    </div>
+                    <br>
+    
+                    <div class="center">
+                        <button class="btn btn-primary" type="submit">Inscription</button>
+                    </div>
+                </fieldset>
+                <br>
+                <em>Les champs avec * sont obligatoires</em>
+                <script type="text/javascript">
+                    function showForm() {
+                        $("#continue").hide();
+                        $("#formData").fadeIn();
+                    }
+                </script>
+            </form>
+            <br>
+            <div class="center">
+                Déjà inscrit ? <a href="/utilisateur/login/index">Se connecter</a>
+            </div>
+        </div>
+    </div>
+    
+</section>

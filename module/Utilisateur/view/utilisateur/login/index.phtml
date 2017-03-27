@@ -1,0 +1,89 @@
+<?php
+    if ($session->offsetExists('id') and !empty($session->offsetGet('id'))) {
+    ?>
+    
+    <h1>Vous êtes connectés</h1>
+    <h4>Bienvenue
+    <?php
+    if ($session->offsetExists('email') and !empty($session->offsetGet('email'))) {
+        echo $session->offsetGet('email'); 
+    }
+    ?>
+    </h4>
+    Redirection...
+    <script type="text/javascript">
+        window.setTimeout(function() {
+            window.location.href = '/utilisateur/profile';
+        }, 3000);
+    </script>
+    <?php } else { ?>
+
+<section class="container">
+    <div class="row">
+        <div class="col-sm-4">
+        </div>
+
+        <div class="col-sm-8">
+            <h1 class="center">Connexion</h1>
+            <br>
+            <?php
+                $form->setAttribute('action', $this->url('login', array('action' => 'login')));
+                $form->prepare();
+                echo $this->form()->openTag($form);
+            ?>
+                <!-- email -->
+                <div class="row">
+                    <div class="col-sm-3">
+                        <?php echo $this->formLabel($form->get('email')); ?>
+                    </div>
+                    <div class="col-sm-9">
+                        <?php echo $this->formElement($form->get('email')); ?>
+                    </div>
+                </div>
+                <br>
+                <!-- password -->
+                <div class="row">
+                    <div class="col-sm-3">
+                        <?php echo $this->formLabel($form->get('password')); ?>
+                    </div>
+                    <div class="col-sm-9">
+                        <?php echo $this->formElement($form->get('password')); ?>
+                    </div>
+                </div>
+                <br>
+                <?php echo $this->formElement($form->get('remember')); ?>
+                <?php echo $this->formLabel($form->get('remember')); ?>
+                <br>
+                <div class="center">
+                <?php  echo $this->formSubmit($form->get('submit')); ?>
+                </div>
+            <?php  echo $this->form()->closeTag(); ?>
+            <br><br>
+            <div class="row">
+                <div class="col-sm-1"></div>
+
+                <div class="col-sm-2">
+                    <i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
+                </div>
+                <div class="col-sm-2">
+                    <i class="fa fa-google-plus fa-2x" aria-hidden="true"></i>
+                </div>
+                <div class="col-sm-2">
+                    <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+                </div>
+                <div class="col-sm-2">
+                    <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+                </div>
+                <div class="col-sm-2">
+                    <i class="fa fa-facebook fa-2x" aria-hidden="true"></i>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+            <br>
+            <div class="center">
+                Pas encore inscrit ? <a href="/utilisateur/register/index">S'inscrire</a>
+            </div>
+        </div>
+    </div>
+</section>
+<?php } ?>

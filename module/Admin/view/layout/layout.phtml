@@ -1,0 +1,69 @@
+<?php echo $this->doctype(); ?>
+<html lang="fr">
+
+<head>
+	<title>Adopte un patron</title>
+	<meta charset="UTF-8">
+	<?php echo $this->headMeta()
+        ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+        ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+    ?>
+
+	<!-- Le styles -->
+	<?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+                    //->prependStylesheet($this->basePath() . '/css/style.css')
+                    //->prependStylesheet($this->basePath() . '/css/bootstrap-theme.min.css')
+                    ->prependStylesheet($this->basePath() . '/css/bootstrap.min.css')
+                    ->prependStylesheet($this->basePath() . '/css/main.css')?>
+
+	<!-- Scripts -->
+	<?php echo $this->headScript()
+        ->prependFile($this->basePath() . '/js/bootstrap.min.js')
+        ->prependFile($this->basePath() . '/js/jquery-3.1.1.min.js')
+        ->prependFile($this->basePath() . '/js/respond.min.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+        ->prependFile($this->basePath() . '/js/html5shiv.js',   'text/javascript', array('conditional' => 'lt IE 9',))
+    ; ?>
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<ul class="nav navbar-nav navbar-left">
+					<li><a href="#"><span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span>AdoptUnBoss</a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
+				</ul>
+				<form class="navbar-form navbar-left inline-form">
+					<div class="form-group">
+						<input type="search" class="input-sm form-control" placeholder="Search si t'es un geek">
+						<button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open"></span> Chercher</button>
+					</div>
+				</form>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active">
+						<li><a href="#">Nos Offres</a></li>
+						<li><a href="#">Comment ça marche ?</a></li>
+						<li><a href="#">Evènements</a></li>
+						<li><a href="#">Connection</a></li>
+						<li><a href="#">Vous êtes recruteur ?</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<main>
+		<?php echo $this->content; ?>
+        <br><br><br>
+	</main>
+    
+	<footer>
+		<nav class="navbar navbar-inverse navbar-fixed-bottom center">
+			<span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span> AdoptUnBoss
+		</nav>
+	</footer>
+	<?php echo $this->inlineScript() ?>
+</body>
+</html>
