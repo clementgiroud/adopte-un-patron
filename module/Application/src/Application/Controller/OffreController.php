@@ -16,7 +16,6 @@ class OffreController extends AbstractActionController
 {
     public function indexAction()
     {
-
         $annonceID = null;
 
         // recupération des info sur la BDD
@@ -25,5 +24,4 @@ class OffreController extends AbstractActionController
 
         return new ViewModel(array('annonce' => $annonceID));
     }
-
 }

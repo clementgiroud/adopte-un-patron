@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 08 Février 2017 à 08:12
--- Version du serveur :  5.7.14
--- Version de PHP :  7.0.10
+-- Généré le :  Lun 27 Mars 2017 à 12:28
+-- Version du serveur :  10.1.22-MariaDB
+-- Version de PHP :  7.1.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `beziers_annonces_aup` (
   `id` int(10) UNSIGNED NOT NULL,
-  `contrat` tinyint(3) UNSIGNED NOT NULL,
+  `contrat` int(10) UNSIGNED NOT NULL,
   `salaire` smallint(5) UNSIGNED NOT NULL,
   `duree` smallint(5) UNSIGNED NOT NULL,
   `experience` smallint(255) UNSIGNED NOT NULL,
@@ -38,6 +38,13 @@ CREATE TABLE `beziers_annonces_aup` (
   `presentation` text,
   `grade` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `beziers_annonces_aup`
+--
+
+INSERT INTO `beziers_annonces_aup` (`id`, `contrat`, `salaire`, `duree`, `experience`, `code_postal`, `statut`, `poste`, `presentation`, `grade`) VALUES
+(1, 1, 1200, 1, 1, '34500', '1', '1', 'gsdfg', 'sdfg');
 
 -- --------------------------------------------------------
 
@@ -209,7 +216,7 @@ CREATE TABLE `beziers_table_statistiques_aup` (
 --
 
 CREATE TABLE `beziers_type_de_contrat_aup` (
-  `id` tinyint(3) UNSIGNED NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL,
   `type` varchar(50) NOT NULL,
   `description` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -351,7 +358,7 @@ ALTER TABLE `beziers_users_aup`
 -- AUTO_INCREMENT pour la table `beziers_annonces_aup`
 --
 ALTER TABLE `beziers_annonces_aup`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT pour la table `beziers_candidature_aup`
 --
@@ -401,7 +408,7 @@ ALTER TABLE `beziers_table_statistiques_aup`
 -- AUTO_INCREMENT pour la table `beziers_type_de_contrat_aup`
 --
 ALTER TABLE `beziers_type_de_contrat_aup`
-  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT pour la table `beziers_users_aup`
 --
