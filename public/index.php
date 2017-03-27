@@ -1,7 +1,6 @@
 <?php
 define('APPLICATION_ENV', 'development');
 
-
 /**
  * This makes our life easier when dealing with paths. Everything is relative
  * to the application root now.

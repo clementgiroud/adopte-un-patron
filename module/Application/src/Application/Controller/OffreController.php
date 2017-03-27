@@ -21,7 +21,7 @@ class OffreController extends AbstractActionController
 
         // recupération des info sur la BDD
         $em = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
-        //$annonceID = $em->getRepository('\Application\Entity\BeziersAnnoncesAup')->findAll();
+        $annonceID = $em->getRepository('\Application\Entity\BeziersAnnoncesAup')->findAll();
 
         return new ViewModel(array('annonce' => $annonceID));
     }

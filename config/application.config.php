@@ -52,6 +52,10 @@ return array(
         // that weren't loaded.
         // 'check_dependencies' => true,
     ),
+    'view_manager' => array(
+        'display_not_found_reason' => true,
+        'display_exceptions'       => true,
+    )
 
     // Used to create an own service manager. May contain one or more child arrays.
     //'service_listener_options' => array(

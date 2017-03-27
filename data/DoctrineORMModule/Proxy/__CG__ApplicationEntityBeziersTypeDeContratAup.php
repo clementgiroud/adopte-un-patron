@@ -179,7 +179,7 @@ class BeziersTypeDeContratAup extends \Application\Entity\BeziersTypeDeContratAu
     public function getId()
     {
         if ($this->__isInitialized__ === false) {
-            return  parent::getId();
+            return (int)  parent::getId();
         }
 
 
