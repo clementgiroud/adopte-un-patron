@@ -9,8 +9,8 @@ class SkillForm extends Form
     {
         parent::__construct('SkillForm');
         $this->setAttribute('method', 'post');
-			
-			
+
+
 					$this->add(array(
             'name' => 'Type de  contrat',
             'type' => 'select',
@@ -24,7 +24,7 @@ class SkillForm extends Form
 
             ),
         ));
-			
+
 								$this->add(array(
             'name' => 'Poste',
             'type' => 'select',
@@ -36,7 +36,7 @@ class SkillForm extends Form
          //   'class' => 'form-control',
             ),
         ));
-			
+
 											$this->add(array(
             'name' => 'Lieux',
             'type' => 'select',
@@ -48,35 +48,19 @@ class SkillForm extends Form
          //   'class' => 'form-control',
             ),
         ));
-			
+
 
         $this->add(array(
       'options' => array(
           'label' => 'Intitulé Poste',
-      ),			
+      ),
 			'name' => 'poste',
-      'type' => 'textarea',     
+      'type' => 'textarea',
       'attributes' => array(
           'class' => 'form-control',
                           'placeholder' => 'Intitulé du Poste'
       ),
   ));
-
-//  $this->add(array(
-//'name' => 'skill',
-//'type' => 'textarea',
-//
-//'options' => array(
-//    'label' => 'Compétences: ',
-//
-//),
-//'attributes' => array(
-//    'class' => 'form-control',
-//		
-//
-//),
-//));
-
 
         $this->add(array(
             'name' => 'submit',
